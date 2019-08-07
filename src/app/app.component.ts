@@ -18,8 +18,15 @@ export class AppComponent implements OnInit {
       'http://pm1.narvii.com/6749/07bf68aeeca2009554f7e5be922106bc95adbf71v2_00.jpg',
       'https://3.bp.blogspot.com/-PiKEUADLecw/U7CfliRJOoI/AAAAAAAAvu4/i3td8In0f2Q/s1600/LOAN+STRANGER+3.png'];
   }
+
+  // FUNÇÃO PARA ADICIONAR IMAGEM
   adicionarImagem(){
     //this.imagens.push('https://picsum.photos/200/300?data=+new Date()')
     this.imagens.push(`https://picsum.photos/200/300?data=${new Date()}`)
+  }
+
+  // FUNÇÃO PARA REMOVER A IMAGEM
+  removerImagem(index:number){
+    this.imagens.splice(index,1)
   }
 }

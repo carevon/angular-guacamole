@@ -7,9 +7,13 @@
   <!--<div class="imgHome" [style.backgroundImage]="'url('+imageURL+')'"></div>-->
 </div>
 
-<!-- array de imagens -->
-<img width="300" height="300" *ngFor="let imagem of imagens" [src]="imagem ">
-
+<div *ngFor="let imagem of imagens;let i = index">
+    <!-- array de imagens -->
+    <a href="#" (click)="removerImagem(i)">
+      <img width="300" height="300" [src]="imagem ">
+    </a>
+    <h1>index = {{i}}</h1>
+</div>
 <!-- chamar a função de adicionar imagens -->
 <button type="button" name="button" (click)="adicionarImagem()">
   Adicionar imagem
