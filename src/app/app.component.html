@@ -4,19 +4,15 @@
     Welcome to the {{ title }}!
   </h1>
   <img width="300" alt="Angular Logo" [src]="imageURL">
-  <div class="imgHome" [style.backgroundImage]="'url('+imageURL+')'"></div>
+  <!--<div class="imgHome" [style.backgroundImage]="'url('+imageURL+')'"></div>-->
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<!-- array de imagens -->
+<img width="300" height="300" *ngFor="let imagem of imagens" [src]="imagem ">
+
+<!-- chamar a função de adicionar imagens -->
+<button type="button" name="button" (click)="adicionarImagem()">
+  Adicionar imagem
+</button>
 
 <router-outlet></router-outlet>
