@@ -3,20 +3,19 @@
   <h1>
     Welcome to the {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" [src]="imageURL">
+  <!-- <img width="300" alt="Angular Logo" [src]="imageURL"> -->
   <!--<div class="imgHome" [style.backgroundImage]="'url('+imageURL+')'"></div>-->
+  <!-- chamar a função de adicionar imagens -->
+  <div style="text-align:center" *ngFor="let imagem of imagens;let i = index">
+      <!-- array de imagens -->
+      <a href="#" (click)="removerImagem(i)">
+        <img width="300" height="300" [src]="imagem ">
+      </a>
+      <h1>index = {{i}}</h1>
+  </div>
+  <button type="button" name="button" (click)="adicionarImagem()">
+    Adicionar imagem
+  </button>
 </div>
-
-<div *ngFor="let imagem of imagens;let i = index">
-    <!-- array de imagens -->
-    <a href="#" (click)="removerImagem(i)">
-      <img width="300" height="300" [src]="imagem ">
-    </a>
-    <h1>index = {{i}}</h1>
-</div>
-<!-- chamar a função de adicionar imagens -->
-<button type="button" name="button" (click)="adicionarImagem()">
-  Adicionar imagem
-</button>
 
 <router-outlet></router-outlet>
